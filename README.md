@@ -12,6 +12,7 @@ This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -74,6 +75,10 @@ That means: if any child inside .theme-toggle-wrapper has focus, the wrapper get
 ### Continued development
 
 In future projects I want to practise making React apps using TypeScript.
+
+### Useful resources
+
+- [How to Deploy Vite + React App to GitHub](https://www.youtube.com/watch?v=XQAaAQnw2Mk&ab_channel=TechCoffeeBreak) - Good step by step explanation.
 
 ## Author
 
