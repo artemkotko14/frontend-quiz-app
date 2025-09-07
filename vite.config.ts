@@ -9,5 +9,5 @@ export default defineConfig({
     },
     host: true, // Optional: helps in some dev environments
   },
-  base: "https://artemkotko14.github.io/frontend-quiz-app/",
+  base: "/frontend-quiz-app/",
 });
