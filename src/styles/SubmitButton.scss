@@ -1,0 +1,29 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+@use "./abstracts/breakpoints" as *;
+
+.app.dark .styled-button.submit-button,
+.app.light .styled-button.submit-button {
+  background-color: $purple600;
+  border: none;
+  padding: 2rem;
+  border-radius: 24px;
+  color: $white;
+  @include text-preset4;
+  @include flex-center(row);
+  &.muted {
+    background-color: mix($purple600, #ffffff, 50%);
+  }
+  @include respond-to(sm) {
+    padding: 1rem;
+    border-radius: 12px;
+    @include text-preset-mobile4;
+    line-height: 1.33;
+  }
+  @media screen and (max-height: 600px) {
+    padding: 1rem;
+    border-radius: 12px;
+    @include text-preset5;
+    line-height: 1.33;
+  }
+}

@@ -1,0 +1,133 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+@use "./abstracts/breakpoints" as *;
+
+.styled-button {
+  @include flex-center(row);
+  justify-content: flex-start;
+  width: rem(564);
+  gap: 2rem;
+  padding: rem(21) 1.5rem;
+  border: 3px solid transparent;
+  box-sizing: border-box; // include border in total size
+  border-radius: 24px;
+  cursor: pointer;
+
+  span {
+    @include text-preset4;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .icon-container {
+    width: rem(40);
+    height: rem(40);
+    flex: 0 0 auto;
+    margin-left: auto; // pushes it to the end of the flex row
+  }
+}
+.answer-option {
+  &:hover,
+  &:focus {
+    border-color: $purple600;
+    transition: border 0.3s ease;
+    outline: none; // remove default outline
+  }
+}
+
+.app.light .styled-button {
+  background-color: $white;
+
+  span {
+    color: $blue900;
+  }
+  &.selected {
+    border-color: $purple600;
+    .answer-label {
+      color: $white;
+      background-color: $purple600;
+    }
+  }
+  &.correctAnswer {
+    border-color: $green500;
+    .answer-label {
+      color: $white;
+      background-color: $green500;
+    }
+  }
+  &.wrongAnswer {
+    border-color: $red500;
+    .answer-label {
+      color: $white;
+      background-color: $red500;
+    }
+  }
+}
+
+.app.dark .styled-button {
+  background-color: $blue850;
+
+  span {
+    color: $white;
+  }
+  &.selected {
+    border-color: $purple600;
+    .answer-label {
+      color: $white;
+      background-color: $purple600;
+    }
+  }
+  &.correctAnswer {
+    border-color: $green500;
+    .answer-label {
+      color: $white;
+      background-color: $green500;
+    }
+  }
+  &.wrongAnswer {
+    border-color: $red500;
+    .answer-label {
+      color: $white;
+      background-color: $red500;
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .styled-button {
+    min-width: rem(450);
+    max-width: rem(550);
+    width: 100%;
+    padding: rem(13) 1rem;
+  }
+}
+
+// Tablet
+@include respond-to(md) {
+  .styled-button {
+    width: 100%;
+    min-width: rem(480);
+    max-width: rem(640);
+  }
+}
+
+@include respond-to(sm) {
+  .styled-button {
+    width: 100%;
+    min-width: auto;
+    gap: 1rem;
+    border-radius: 12px;
+    span {
+      @include text-preset-mobile4;
+    }
+  }
+}
+@media screen and (max-height: 600px) {
+  .styled-button {
+    padding: 1.2rem;
+    border-radius: 12px;
+    span {
+      @include text-preset4;
+    }
+  }
+}

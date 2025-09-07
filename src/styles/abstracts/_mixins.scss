@@ -1,0 +1,73 @@
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@function rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+} // converts px to rem
+
+@mixin text-preset1 {
+  font-size: rem(144);
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@mixin text-preset2 {
+  font-size: rem(64);
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@mixin text-preset3 {
+  font-size: rem(36);
+  line-height: 120%;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+
+@mixin text-preset4 {
+  font-size: rem(28);
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@mixin text-preset5 {
+  font-size: rem(24);
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@mixin text-preset6 {
+  font-size: rem(20);
+  line-height: 120%;
+  letter-spacing: 0px;
+  font-style: italic;
+}
+@mixin text-preset-mobile1 {
+  font-size: rem(88);
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+@mixin text-preset-mobile2 {
+  font-size: rem(40);
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+@mixin text-preset-mobile3 {
+  font-size: rem(20);
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+@mixin text-preset-mobile4 {
+  font-size: rem(18);
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@mixin text-preset-mobile5 {
+  font-size: rem(14);
+  line-height: 150%;
+  letter-spacing: 0px;
+}

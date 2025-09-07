@@ -1,0 +1,26 @@
+// Breakpoint variables
+$breakpoint-sm: 500px; // phones
+$breakpoint-md: 790px; // tablets
+$breakpoint-lg: 1110px; // small laptops
+$breakpoint-xl: 1280px; // desktops
+
+// Mixin for media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  }
+}
