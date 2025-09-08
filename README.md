@@ -64,7 +64,7 @@ input:checked + .slider::before {
 }
 ```
 
-aria-label gives an accessible name to an element, so screen readers can announce what it is. It does not show anything visually — it’s purely for assistive technologies.
+**aria-label** gives an accessible name to an element, so screen readers can announce what it is. It does not show anything visually — it’s purely for assistive technologies.
 
 ```tsx
 <input
