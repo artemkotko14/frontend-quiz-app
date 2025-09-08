@@ -64,6 +64,17 @@ input:checked + .slider::before {
 }
 ```
 
+aria-label gives an accessible name to an element, so screen readers can announce what it is. It does not show anything visually — it’s purely for assistive technologies.
+
+```tsx
+<input
+  type="checkbox"
+  checked={colorMode === "dark"}
+  onChange={onToggle}
+  aria-label="Toggle dark mode"
+/>
+```
+
 ```css
 .theme-toggle-wrapper:focus-within {
   border: 2px solid purple;

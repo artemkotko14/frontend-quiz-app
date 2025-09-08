@@ -25,6 +25,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({
           type="checkbox"
           checked={colorMode === "dark"}
           onChange={onToggle}
+          aria-label="Toggle dark mode"
         />
         <span className="slider"></span>
       </label>

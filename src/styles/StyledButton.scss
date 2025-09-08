@@ -9,7 +9,7 @@
   gap: 2rem;
   padding: rem(21) 1.5rem;
   border: 3px solid transparent;
-  box-sizing: border-box; // include border in total size
+  box-sizing: border-box;
   border-radius: 24px;
   cursor: pointer;
 
@@ -25,74 +25,57 @@
     flex: 0 0 auto;
     margin-left: auto; // pushes it to the end of the flex row
   }
+
+  // Shared states (light & dark)
+  &.selected {
+    border-color: $purple600;
+    .answer-label {
+      color: $white;
+      background-color: $purple600;
+    }
+  }
+  &.correctAnswer {
+    border-color: $green500;
+    .answer-label {
+      color: $white;
+      background-color: $green500;
+    }
+  }
+  &.wrongAnswer {
+    border-color: $red500;
+    .answer-label {
+      color: $white;
+      background-color: $red500;
+    }
+  }
 }
+
+// Hover/focus
 .answer-option {
   &:hover,
   &:focus {
     border-color: $purple600;
     transition: border 0.3s ease;
-    outline: none; // remove default outline
+    outline: none;
   }
 }
 
+// Theme-specific overrides
 .app.light .styled-button {
   background-color: $white;
-
   span {
     color: $blue900;
-  }
-  &.selected {
-    border-color: $purple600;
-    .answer-label {
-      color: $white;
-      background-color: $purple600;
-    }
-  }
-  &.correctAnswer {
-    border-color: $green500;
-    .answer-label {
-      color: $white;
-      background-color: $green500;
-    }
-  }
-  &.wrongAnswer {
-    border-color: $red500;
-    .answer-label {
-      color: $white;
-      background-color: $red500;
-    }
   }
 }
 
 .app.dark .styled-button {
   background-color: $blue850;
-
   span {
     color: $white;
   }
-  &.selected {
-    border-color: $purple600;
-    .answer-label {
-      color: $white;
-      background-color: $purple600;
-    }
-  }
-  &.correctAnswer {
-    border-color: $green500;
-    .answer-label {
-      color: $white;
-      background-color: $green500;
-    }
-  }
-  &.wrongAnswer {
-    border-color: $red500;
-    .answer-label {
-      color: $white;
-      background-color: $red500;
-    }
-  }
 }
 
+// Breakpoints
 @include respond-to(lg) {
   .styled-button {
     min-width: rem(450);
@@ -102,7 +85,6 @@
   }
 }
 
-// Tablet
 @include respond-to(md) {
   .styled-button {
     width: 100%;
@@ -122,6 +104,7 @@
     }
   }
 }
+
 @media screen and (max-height: 600px) {
   .styled-button {
     padding: 1.2rem;
